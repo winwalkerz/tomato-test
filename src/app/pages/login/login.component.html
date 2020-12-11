@@ -1,0 +1,48 @@
+<div class="loggedout_body">
+  <div class="divLogin">
+    <p style="text-align: center; font-size: 36px">KETSHOPWEB</p>
+    <!-- <form nz-from> -->
+    <div style="margin-bottom: 20px">
+      <div>
+        <nz-input-group nzCompact nzSize="large">
+          <div class="divIcon">
+            <span class="icon1"><i  nz-icon nzType="user" nzTheme="outline"></i> </span>
+          </div>
+          <input
+            nz-input
+            nzSize="large"
+            placeholder="ชื่อผู้ใช้งาน"
+            [(ngModel)]="value"
+            style="width: 86%"
+          />
+        </nz-input-group>
+        <nz-input-group nzCompact nzSize="large">
+          <div class="divIcon">
+            <span class="icon1"> <i nz-icon nzType="lock" nzTheme="outline"></i> </span>
+          </div>
+
+          <input
+            nzSize="large"
+            nz-input
+            type="password"
+            placeholder="รหัสผ่าน"
+            [(ngModel)]="value"
+            style="width: 86%"
+          />
+        </nz-input-group>
+      </div>
+      <button
+        nz-button
+        nzType="primary"
+        nzSize="large"
+        nzDanger
+        style="width: 100%"
+      >
+        เข้าสู่ระบบ
+      </button>
+      <nz-divider></nz-divider>
+    </div>
+
+    <!-- </form> -->
+  </div>
+</div>
