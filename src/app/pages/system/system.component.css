@@ -1,0 +1,18 @@
+/* .ant-layout-content {
+    flex: auto;
+    min-height: 0;
+    background-color: rgb(255, 255, 255);
+} */
+/* .ant-layout-sider {
+  height: 100%;
+} */
+.inner-content {
+  padding: 15px;
+  background: #fff;
+  min-height: 630px;
+}
+/* ทำให้ sider เต็มหน้าจอ */
+.ant-layout .ant-layout-has-sider {
+height: 100%;
+width: 500px;
+}

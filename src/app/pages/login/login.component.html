@@ -6,19 +6,23 @@
       <div>
         <nz-input-group nzCompact nzSize="large">
           <div class="divIcon">
-            <span class="icon1"><i  nz-icon nzType="user" nzTheme="outline"></i> </span>
+            <span class="icon1"
+              ><i nz-icon nzType="user" nzTheme="outline"></i>
+            </span>
           </div>
           <input
             nz-input
             nzSize="large"
             placeholder="ชื่อผู้ใช้งาน"
-            [(ngModel)]="value"
+            [(ngModel)]="userLogin.username"
             style="width: 86%"
           />
         </nz-input-group>
         <nz-input-group nzCompact nzSize="large">
           <div class="divIcon">
-            <span class="icon1"> <i nz-icon nzType="lock" nzTheme="outline"></i> </span>
+            <span class="icon1">
+              <i nz-icon nzType="lock" nzTheme="outline"></i>
+            </span>
           </div>
 
           <input
@@ -26,7 +30,7 @@
             nz-input
             type="password"
             placeholder="รหัสผ่าน"
-            [(ngModel)]="value"
+            [(ngModel)]="userLogin.password"
             style="width: 86%"
           />
         </nz-input-group>
@@ -37,6 +41,7 @@
         nzSize="large"
         nzDanger
         style="width: 100%"
+        (click)="login()"
       >
         เข้าสู่ระบบ
       </button>
