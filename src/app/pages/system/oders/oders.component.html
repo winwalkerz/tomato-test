@@ -1,9 +1,175 @@
-<div nz-row >
-    <div nz-col nzSpan="7">
-        <h3 >Order</h3>
+<div nz-row>
+  <div nz-col nzSpan="5">
+    <h3>Order</h3>
+  </div>
+  <div nz-col nzSpan="9">
+    <nz-range-picker>
+      <span>
+        <input
+          readonly=""
+          class="ant-calendar-range-picker-input ng-star-inserted"
+          placeholder="Start date"
+        />
+        <span> ~ </span>
+      </span>
+      <input
+        readonly=""
+        class="ant-calendar-range-picker-input ng-star-inserted"
+        placeholder="End date"
+      />
+      <i
+        nz-icon=""
+        theme="fill"
+        type="close-circle"
+        class="ant-calendar-picker-clear ng-star-inserted"
+      ></i>
+    </nz-range-picker>
+  </div>
+  <div nz-col nzSpan="10">
+    <div nz-row>
+      <div nz-col nzSpan="8">
+        <button nz-button nz-dropdown [nzDropdownMenu]="menu">
+          <i nz-icon nzType="printer" nzTheme="outline"></i>
+          Hover me
+        </button>
+        <nz-dropdown-menu #menu="nzDropdownMenu">
+          <ul nz-menu nzSelectable>
+            <li nz-menu-item>พิมพ์ใบจัดส่งซ้ำ</li>
+            <li nz-menu-item>พิมพ์ใบสั่งซื้อ</li>
+          </ul>
+        </nz-dropdown-menu>
+      </div>
+      <div nz-col nzSpan="8">
+        <button nz-button>จัดการหลายออเดอร์</button>
+      </div>
+      <div nz-col nzSpan="8">
+        <button nz-button>สร้างออเดอร์</button>
+      </div>
     </div>
-    <div nz-col nzSpan="8">
-        <input nz-input>
-    </div>
-    <div nz-col nzSpan="9">col-8</div>
+  </div>
 </div>
+<nz-tabset>
+  <nz-tab nzTitle="Tab 1">
+    <div class="filter">
+      <div nz-row>
+        <div nz-col nzSpan="3">
+          <span>Filter</span>
+        </div>
+        <div nz-col nzSpan="4">
+          <nz-select ngModel="ทุกสถานะ">
+            <nz-option nzValue="ทุกสถานะ" nzLabel="ทุกสถานะ"></nz-option>
+            <nz-option nzValue="ยกเลิก" nzLabel="ยกเลิก"></nz-option>
+            <nz-option nzValue="รอชำระเงิน" nzLabel="รอชำระเงิน"></nz-option
+            ><nz-option nzValue="ได้รับเงิน" nzLabel="ได้รับเงิน"></nz-option
+            ><nz-option
+              nzValue="จัดเตรียมสินค้า"
+              nzLabel="จัดเตรียมสินค้า"
+            ></nz-option
+            ><nz-option nzValue="จัดส่ง" nzLabel="จัดส่ง"></nz-option
+            ><nz-option nzValue="เสร็จสิ้น" nzLabel="เสร็จสิ้น"></nz-option>
+          </nz-select>
+        </div>
+        <div nz-col nzSpan="4">
+          <nz-select ngModel="ทุกช่องการขาย">
+            <nz-option
+              nzValue="ทุกช่องการขาย"
+              nzLabel="ทุกช่องการขาย"
+            ></nz-option>
+            <nz-option nzValue="Facebook" nzLabel="Facebook"></nz-option>
+            <nz-option nzValue="Line@" nzLabel="Line@"></nz-option
+            ><nz-option nzValue="Line" nzLabel="LIne"></nz-option
+            ><nz-option nzValue="Instagram" nzLabel="Instagram"></nz-option
+            ><nz-option nzValue="Twiiter" nzLabel="Twiiter"></nz-option
+            ><nz-option nzValue="Wechat" nzLabel="Wechat"></nz-option>
+            <nz-option nzValue="Website" nzLabel="Website"></nz-option>
+          </nz-select>
+        </div>
+        <div nz-col nzSpan="4">
+          <nz-select ngModel="ทุกการชำระเงิน">
+            <nz-option
+              nzValue="ทุกการชำระเงิน"
+              nzLabel="ทุกการชำระเงิน"
+            ></nz-option>
+            <nz-option nzValue="ชำระเงินสด" nzLabel="ชำระเงินสด"></nz-option>
+            <nz-option
+              nzValue="โอนผ่านธนาคาร"
+              nzLabel="โอนผ่านธนาคาร"
+            ></nz-option
+            ><nz-option nzValue="Credit Card" nzLabel="Credit Card"></nz-option
+            ><nz-option nzValue="QR Code" nzLabel="QR Code"></nz-option
+            ><nz-option
+              nzValue="เก็บเงินปลายทาง"
+              nzLabel="เก็บเงินปลายทาง"
+            ></nz-option>
+          </nz-select>
+        </div>
+        <div nz-col nzSpan="4">
+          <nz-select ngModel="Create By">
+            <nz-option nzValue="Create By" nzLabel="Create By"></nz-option>
+          </nz-select>
+        </div>
+        <div nz-col nzSpan="4">
+          <button nz-button>EXPORT</button>
+        </div>
+      </div>
+    </div>
+    <nz-table>
+      <thead>
+        <tr>
+          <!-- Link ----------------------------------------------------------------->
+          <th>
+            <div>Link</div>
+          </th>
+          <!-- Chanel ----------------------------------------------------------------->
+          <th style="text-align: center; min-width: 90px">
+            <div>
+              Channel <i nz-icon nzType="info-circle" nzTheme="outline"></i>
+            </div>
+          </th>
+          <!-- Order no. ----------------------------------------------------------------->
+          <th>
+            <div>
+              <input
+                nz-input
+                nzSize="small"
+                placeholder="Order no."
+                style="max-width: 120px"
+                [(ngModel)]="model_search.ordercode"
+              />
+            </div>
+            <!-- Status ----------------------------------------------------------------->
+          </th>
+          <th>Status <i nz-icon nzType="info-circle" nzTheme="outline"></i></th>
+          <!-- ชื่อ/อีเมล ------------------------------------------------------------------->
+          <th>
+            <input
+              nz-input
+              placeholder="ชื่อ หรืออีเมล"
+              nzSize="default"
+              nzSize="small"
+            />
+          </th>
+          <!-- ยอดชำระ -------------------------------------------------------------------->
+          <th>
+            <input nz-input placeholder="ยอดชำระ" nzSize="small" />
+          </th>
+          <!-- pay ------------------------------------------------------------------------>
+          <th>Pay <i nz-icon nzType="info-circle" nzTheme="outline"></i></th>
+          <!-- Tracking code -------------------------------------------------------------->
+          <th>
+            <input nz-input placeholder="Tracking Code" nzSize="small" />
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let obj of listorder">
+          <td>
+            <nz-tag [nzColor]="'red'">{{ obj.ordercode }}</nz-tag>
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </nz-tab>
+  <nz-tab nzTitle="Tab 2"> Content of Tab Pane 2 </nz-tab>
+  <nz-tab nzTitle="Tab 3"> Content of Tab Pane 3 </nz-tab>
+</nz-tabset>
