@@ -1,5 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 .ant-table-thead > tr > th {
-    position: relative;
-    padding: 10px 4.8px;
+  position: relative;
+  padding: 10px 4.8px;
+}
+html , body {
+    font-family: Poppins,Prompt;
   }

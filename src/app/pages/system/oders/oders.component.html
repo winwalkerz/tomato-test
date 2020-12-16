@@ -123,8 +123,86 @@
           <!-- Chanel ----------------------------------------------------------------->
           <th style="text-align: center; min-width: 90px">
             <div>
-              Channel <i nz-icon nzType="info-circle" nzTheme="outline"></i>
+              Channel
+              <i
+                nz-icon
+                nzType="info-circle"
+                nzTheme="outline"
+                nz-popover
+                [nzPopoverContent]="contentTemplate"
+                nzPopoverTrigger="click"
+              ></i>
             </div>
+            <ng-template #contentTemplate>
+              <div>
+                <p>
+                  <img
+                    class="logoChannel2"
+                    src="../../../../assets/ch-website.png"
+                  />Website
+                </p>
+                <p>
+                  <img
+                    class="logoChannel2"
+                    src="../../../../assets/ch-app.png"
+                  />Application
+                </p>
+                <p>
+                  <img
+                    class="logoChannel2"
+                    src="../../../../assets/ch-facebook.png"
+                  />Facebook
+                </p>
+                <p>
+                  <img
+                    class="logoChannel2"
+                    src="../../../../assets/ch-instagram.png"
+                  />Instagram
+                </p>
+                <p>
+                  <img
+                    class="logoChannel2"
+                    src="../../../../assets/ch-ket-market.png"
+                  />Ket-market
+                </p>
+                <p>
+                  <img
+                    class="logoChannel2"
+                    src="../../../../assets/ch-line.png"
+                  />Line
+                </p>
+                <p>
+                  <img
+                    class="logoChannel2"
+                    src="../../../../assets/ch-lineat.png"
+                  />Line@
+                </p>
+                <p>
+                  <img
+                    class="logoChannel2"
+                    src="../../../../assets/ch-salepage.png"
+                  />Sale Page
+                </p>
+                <p>
+                  <img
+                    class="logoChannel2"
+                    src="../../../../assets/ch-shopee.png"
+                  />Shopee
+                </p>
+                <p>
+                  <img
+                    class="logoChannel2"
+                    src="../../../../assets/ch-twitter.png"
+                  />Twiiter
+                </p>
+                <p>
+                  <img
+                    class="logoChannel2"
+                    src="../../../../assets/ch-wechat.png"
+                  />Wechat
+                </p>
+              </div>
+            </ng-template>
           </th>
           <!-- Order no. ----------------------------------------------------------------->
           <th>
@@ -151,10 +229,61 @@
           </th>
           <!-- ยอดชำระ -------------------------------------------------------------------->
           <th>
-            <input nz-input placeholder="ยอดชำระ" nzSize="small" />
+            <input
+              nz-input
+              placeholder="ยอดชำระ"
+              style="max-width: 100px"
+              nzSize="small"
+            />
           </th>
           <!-- pay ------------------------------------------------------------------------>
-          <th>Pay <i nz-icon nzType="info-circle" nzTheme="outline"></i></th>
+          <th>
+            Pay
+            <i
+              nz-icon
+              nzType="info-circle"
+              nzTheme="outline"
+              nz-popover
+              nzPopoverPlacement="left"
+              [nzPopoverContent]="contentTemplatePay"
+              nzPopoverTrigger="click"
+            ></i>
+            <ng-template #contentTemplatePay>
+              <div>
+                <p>
+                  <img
+                    class="logoChannel2"
+                    src="../../../../assets/payment-cash.png"
+                  />
+                  ชำระเงินสด
+                </p>
+                <p>
+                  <img
+                    class="logoChannel2"
+                    src="../../../../assets/payment-transfer.png"
+                  />โอนเงินผ่านธนาคาร
+                </p>
+                <p>
+                  <img
+                    class="logoChannel2"
+                    src="../../../../assets/payment-credit.png"
+                  />Credit card
+                </p>
+                <p>
+                  <img
+                    class="logoChannel2"
+                    src="../../../../assets/payment-qrcode.png"
+                  />QR Code
+                </p>
+                <p>
+                  <img
+                    class="logoChannel2"
+                    src="../../../../assets/payment-cod.png"
+                  />เก็บเงินปลายทาง
+                </p>
+              </div>
+            </ng-template>
+          </th>
           <!-- Tracking code -------------------------------------------------------------->
           <th>
             <input nz-input placeholder="Tracking Code" nzSize="small" />
@@ -164,11 +293,106 @@
       <tbody>
         <tr *ngFor="let obj of listorder">
           <td>
+            <i
+              nz-icon
+              nzType="link"
+              nzTheme="outline"
+              nzTooltipTitle="คัดลอกลิงค์สำหรับลูกค้า"
+              nzTooltipPlacement="right"
+              nz-button
+              nz-tooltip
+            ></i>
+          </td>
+          <td style="text-align: center">
+            <div *ngIf="obj.channel == 'facebook'">
+              <img
+                class="logoChannel"
+                src="../../../../assets/ch-facebook.png"
+              />
+            </div>
+            <div *ngIf="obj.channel == 'website'">
+              <img
+                class="logoChannel"
+                src="../../../../assets/ch-website.png"
+              />
+            </div>
+            <div *ngIf="obj.channel == 'line'">
+              <img class="logoChannel" src="../../../../assets/ch-line.png" />
+            </div>
+            <!-- <div *ngIf="obj.channel == 'facebook'">
+              <img
+                class="logoChannel"
+                src="../../../../assets/ch-facebook.png"
+              />
+            </div> -->
+          </td>
+          <td>
             <nz-tag [nzColor]="'red'">{{ obj.ordercode }}</nz-tag>
+            <p>
+              {{ obj.order_date }}
+            </p>
+          </td>
+          <td>
+            <p>ทำไม่เป็น</p>
+          </td>
+          <td>
+            <div>
+              <p>{{ obj.name }}</p>
+              <p>{{ obj.username }}</p>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="obj.paymenttype.status == '0'">
+              <nz-tag nzColor="default">
+                <i nz-icon nzType="clock-circle"></i>
+                <span>{{ obj.totals | currency: "" }}</span>
+              </nz-tag>
+            </div>
+            <div *ngIf="obj.paymenttype.status == '1'">
+              <nz-tag nzColor="success">
+                <span>{{ obj.totals | currency: "" }}</span>
+              </nz-tag>
+            </div>
+            <p></p>
+          </td>
+          <td>
+            <div *ngIf="obj.paymenttype.id == '4'">
+              <img
+                class="logoChannel"
+                src="../../../../assets/payment-cod.png"
+              />
+            </div>
+            <div *ngIf="obj.paymenttype.id == '2'">
+              <img
+                class="logoChannel"
+                src="../../../../assets/payment-transfer.png"
+              />
+            </div>
+          </td>
+          <td>
+            <div>
+              <div nz-row>
+                <div nz-col nzSpan="12" *ngIf="obj?.delivery?.logo">
+                  <!-- เช็คว่ามี logo ไหม ถ้าไม่เช็คจะ error เพราะหาข้อมูลมาแสดงไม่ได้-->
+                  <img
+                    class="logoDelivery"
+                    src="https://uat.ketshoptest.com/{{ obj.delivery.logo }}"
+                  />
+                  <div nz-col nzSpan="12" *ngIf="obj?.delivery?.type">
+                    <span>{{ obj.delivery.type }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </td>
         </tr>
       </tbody>
     </nz-table>
+    <nz-pagination
+      [nzPageIndex]="1"
+      [nzTotal]="count"
+      (nzPageIndexChange)="click($event)"
+    ></nz-pagination>
   </nz-tab>
   <nz-tab nzTitle="Tab 2"> Content of Tab Pane 2 </nz-tab>
   <nz-tab nzTitle="Tab 3"> Content of Tab Pane 3 </nz-tab>

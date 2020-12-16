@@ -15,6 +15,9 @@ import { NzTabsModule } from 'ng-zorro-antd/tabs';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzTagModule } from 'ng-zorro-antd/tag';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzPopoverModule } from 'ng-zorro-antd/popover';
+import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 
 @NgModule({
   declarations: [OdersComponent],
@@ -32,7 +35,10 @@ import { NzTagModule } from 'ng-zorro-antd/tag';
     FormsModule,
     NzFormModule,
     NzTableModule,
-    NzTagModule
+    NzTagModule,
+    NzToolTipModule,
+    NzPopoverModule,
+    NzPaginationModule,
   ],
 })
 export class OdersModule {}
