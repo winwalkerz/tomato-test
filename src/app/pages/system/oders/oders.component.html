@@ -56,56 +56,56 @@
           <span>Filter</span>
         </div>
         <div nz-col nzSpan="4">
-          <nz-select ngModel="ทุกสถานะ">
-            <nz-option nzValue="ทุกสถานะ" nzLabel="ทุกสถานะ"></nz-option>
-            <nz-option nzValue="ยกเลิก" nzLabel="ยกเลิก"></nz-option>
-            <nz-option nzValue="รอชำระเงิน" nzLabel="รอชำระเงิน"></nz-option
-            ><nz-option nzValue="ได้รับเงิน" nzLabel="ได้รับเงิน"></nz-option
-            ><nz-option
-              nzValue="จัดเตรียมสินค้า"
-              nzLabel="จัดเตรียมสินค้า"
-            ></nz-option
-            ><nz-option nzValue="จัดส่ง" nzLabel="จัดส่ง"></nz-option
-            ><nz-option nzValue="เสร็จสิ้น" nzLabel="เสร็จสิ้น"></nz-option>
+          <nz-select
+            [(ngModel)]="model_search.status"
+            (ngModelChange)="changeFilter($event)"
+          >
+            <nz-option [nzValue]="''" nzLabel="ทุกสถานะ"></nz-option>
+            <nz-option [nzValue]="'-1'" nzLabel="ยกเลิก"></nz-option>
+            <nz-option [nzValue]="'1'" nzLabel="รอชำระเงิน"></nz-option
+            ><nz-option [nzValue]="'2'" nzLabel="ได้รับเงิน"></nz-option
+            ><nz-option [nzValue]="'3'" nzLabel="จัดเตรียมสินค้า"></nz-option
+            ><nz-option [nzValue]="'4'" nzLabel="จัดส่ง"></nz-option
+            ><nz-option [nzValue]="'5'" nzLabel="เสร็จสิ้น"></nz-option>
           </nz-select>
         </div>
         <div nz-col nzSpan="4">
-          <nz-select ngModel="ทุกช่องการขาย">
-            <nz-option
-              nzValue="ทุกช่องการขาย"
-              nzLabel="ทุกช่องการขาย"
-            ></nz-option>
-            <nz-option nzValue="Facebook" nzLabel="Facebook"></nz-option>
-            <nz-option nzValue="Line@" nzLabel="Line@"></nz-option
-            ><nz-option nzValue="Line" nzLabel="LIne"></nz-option
-            ><nz-option nzValue="Instagram" nzLabel="Instagram"></nz-option
-            ><nz-option nzValue="Twiiter" nzLabel="Twiiter"></nz-option
-            ><nz-option nzValue="Wechat" nzLabel="Wechat"></nz-option>
-            <nz-option nzValue="Website" nzLabel="Website"></nz-option>
+          <!-- [(ngModel)]="............." แสดงข้อมูลตาม ngModel-->
+          <nz-select
+            [(ngModel)]="model_search.channel"
+            (ngModelChange)="changeFilter($event)"
+          >
+            <nz-option [nzValue]="''" nzLabel="ทุกช่องการขาย"></nz-option>
+            <nz-option [nzValue]="'facebook'" nzLabel="Facebook"></nz-option>
+            <nz-option [nzValue]="'line@'" nzLabel="Line@"></nz-option
+            ><nz-option [nzValue]="'line'" nzLabel="LIne"></nz-option
+            ><nz-option [nzValue]="'instagram'" nzLabel="Instagram"></nz-option
+            ><nz-option [nzValue]="'twiiter'" nzLabel="Twiiter"></nz-option
+            ><nz-option [nzValue]="'wechat'" nzLabel="Wechat"></nz-option>
+            <nz-option [nzValue]="'website'" nzLabel="Website"></nz-option>
           </nz-select>
         </div>
         <div nz-col nzSpan="4">
-          <nz-select ngModel="ทุกการชำระเงิน">
-            <nz-option
-              nzValue="ทุกการชำระเงิน"
-              nzLabel="ทุกการชำระเงิน"
-            ></nz-option>
-            <nz-option nzValue="ชำระเงินสด" nzLabel="ชำระเงินสด"></nz-option>
-            <nz-option
-              nzValue="โอนผ่านธนาคาร"
-              nzLabel="โอนผ่านธนาคาร"
-            ></nz-option
-            ><nz-option nzValue="Credit Card" nzLabel="Credit Card"></nz-option
-            ><nz-option nzValue="QR Code" nzLabel="QR Code"></nz-option
-            ><nz-option
-              nzValue="เก็บเงินปลายทาง"
-              nzLabel="เก็บเงินปลายทาง"
-            ></nz-option>
+          <nz-select
+            [(ngModel)]="model_search.paymenttype"
+            (ngModelChange)="changeFilter($event)"
+          >
+            <nz-option [nzValue]="''" nzLabel="ทุกการชำระเงิน"> </nz-option>
+            <nz-option [nzValue]="'1'" nzLabel="ชำระเงินสด"></nz-option>
+            <nz-option [nzValue]="'2'" nzLabel="โอนผ่านธนาคาร"></nz-option>
+            <nz-option [nzValue]="'3'" nzLabel="Credit Card"></nz-option
+            ><nz-option [nzValue]="'QR Code'" nzLabel="QR Code"></nz-option>
+            <nz-option [nzValue]="'4'" nzLabel="เก็บเงินปลายทาง"></nz-option>
           </nz-select>
         </div>
         <div nz-col nzSpan="4">
-          <nz-select ngModel="Create By">
-            <nz-option nzValue="Create By" nzLabel="Create By"></nz-option>
+          <nz-select [(ngModel)]="model_search.created_by">
+            <nz-option [nzValue]="''" nzLabel="Create By"></nz-option>
+            <<nz-option
+              [nzValue]="obj.created_by"
+              nzLabel="{{ obj.created_by }}"
+              *ngFor="let obj of listorder"
+            ></nz-option>
           </nz-select>
         </div>
         <div nz-col nzSpan="4">
@@ -212,12 +212,47 @@
                 nzSize="small"
                 placeholder="Order no."
                 style="max-width: 120px"
+                oninput="this.value = this.value.replace(/[^0-9\.]/g, '');"
                 [(ngModel)]="model_search.ordercode"
+                (ngModelChange)="changeFilter($event)"
               />
             </div>
             <!-- Status ----------------------------------------------------------------->
           </th>
-          <th>Status <i nz-icon nzType="info-circle" nzTheme="outline"></i></th>
+          <th>
+            Status
+            <i
+              nz-icon
+              nzType="info-circle"
+              nzTheme="outline"
+              nz-popover
+              [nzPopoverContent]="contentTemplateStatus"
+              nzPopoverTrigger="click"
+              nzPopoverPlacement="bottom"
+            ></i>
+            <ng-template #contentTemplateStatus>
+              <div>
+                <p>
+                  <img class="logoChannel2" src="../../../../assets/order-status1.png">  รอชำระเงิน 
+                </p>
+                <p>
+                  <img class="logoChannel2" src="../../../../assets/order-status2.png">  ได้รับเงิน 
+                </p>
+                <p>
+                  <img class="logoChannel2" src="../../../../assets/order-status3.png">  จัดเตรียมส่งสินค้า 
+                </p>
+                <p>
+                  <img class="logoChannel2" src="../../../../assets/order-status4.png">  จัดส่ง 
+                </p>
+                <p>
+                  <img class="logoChannel2" src="../../../../assets/order-success.png">  เสร็จสิ้น 
+                </p>
+                <p>
+                  <img class="logoChannel2" src="../../../../assets/order-status5.png">  ยกเลิก 
+                </p>
+              </div>
+            </ng-template>
+          </th>
           <!-- ชื่อ/อีเมล ------------------------------------------------------------------->
           <th>
             <input
@@ -225,6 +260,8 @@
               placeholder="ชื่อ หรืออีเมล"
               nzSize="default"
               nzSize="small"
+              name="search"
+              [(ngModel)]="searchText"
             />
           </th>
           <!-- ยอดชำระ -------------------------------------------------------------------->
@@ -291,7 +328,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let obj of listorder">
+        <tr *ngFor="let obj of listorder | filter:searchText">
           <td>
             <i
               nz-icon
@@ -319,6 +356,9 @@
             <div *ngIf="obj.channel == 'line'">
               <img class="logoChannel" src="../../../../assets/ch-line.png" />
             </div>
+            <div *ngIf="obj.channel == 'app'">
+              <img class="logoChannel" src="../../../../assets/ch-app.png" />
+            </div>
             <!-- <div *ngIf="obj.channel == 'facebook'">
               <img
                 class="logoChannel"
@@ -333,12 +373,33 @@
             </p>
           </td>
           <td>
-            <p>ทำไม่เป็น</p>
+            <div *ngIf="obj.status =='1'">
+              <img class="logoChannel" src="../../../../assets/order-status1.png">
+            </div>
+            <div *ngIf="obj.status =='2'">
+              <img class="logoChannel" src="../../../../assets/order-status2.png">
+            </div>
+            <div *ngIf="obj.status =='3'">
+              <img class="logoChannel" src="../../../../assets/order-status3.png">
+            </div>
+            <div *ngIf="obj.status =='4'">
+              <img class="logoChannel" src="../../../../assets/order-status4.png">
+            </div>
+            <div *ngIf="obj.status =='5'">
+              <img class="logoChannel" src="../../../../assets/order-success.png">
+            </div>
+            <div *ngIf="obj.status =='-1'">
+              <img class="logoChannel" src="../../../../assets/order-status5.png">
+            </div>
           </td>
           <td>
             <div>
-              <p>{{ obj.name }}</p>
-              <p>{{ obj.username }}</p>
+              <p>
+                <span>{{ obj.bill_name }} {{ obj.bill_lastname }}</span>
+              </p>
+              <p>
+                {{obj.username}}
+              </p>
             </div>
           </td>
           <td>

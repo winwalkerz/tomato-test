@@ -18,7 +18,7 @@ import { NzTagModule } from 'ng-zorro-antd/tag';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzPopoverModule } from 'ng-zorro-antd/popover';
 import { NzPaginationModule } from 'ng-zorro-antd/pagination';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 @NgModule({
   declarations: [OdersComponent],
   imports: [
@@ -39,6 +39,7 @@ import { NzPaginationModule } from 'ng-zorro-antd/pagination';
     NzToolTipModule,
     NzPopoverModule,
     NzPaginationModule,
+    Ng2SearchPipeModule,
   ],
 })
 export class OdersModule {}
