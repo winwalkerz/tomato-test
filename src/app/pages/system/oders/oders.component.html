@@ -446,6 +446,9 @@
               </div>
             </div>
           </td>
+          <td *ngFor="let item of obj.change_status">
+              {{item.status}}{{item.datetime}}
+          </td>
         </tr>
       </tbody>
     </nz-table>

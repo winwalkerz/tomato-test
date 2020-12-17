@@ -4,5 +4,5 @@
   padding: 10px 4.8px;
 }
 html , body {
-    font-family: Poppins,Prompt;
+    font-family: Poppins,Prompt !important;
   }
