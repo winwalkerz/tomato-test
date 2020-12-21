@@ -1,0 +1,17 @@
+.headerbar {
+  border-bottom: 1px solid #707070;
+  margin: 0 auto;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: 1;
+  padding: 10px 0;
+}
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+

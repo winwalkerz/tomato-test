@@ -3,6 +3,10 @@
   position: relative;
   padding: 10px 4.8px;
 }
-html , body {
-    font-family: Poppins,Prompt;
-  }
+html,
+body {
+  font-family: Poppins, Prompt;
+}
+.align-items-center {
+  align-items: center !important;
+}

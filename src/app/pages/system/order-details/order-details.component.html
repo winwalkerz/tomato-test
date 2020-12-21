@@ -1,0 +1,187 @@
+<div>
+  <div nz-row style="border-bottom: black">
+    <div nz-col nzSpan="12">
+      <div nz-row>
+        <div nz-col nzSpan="5"><p>QR Code</p></div>
+        <div nz-col>
+          <span>เลขออเดอร์ #{{orderDetail?.ordercode}}</span>
+          <p>
+            <a nz-button nzType="link" nzDanger
+              ><i nz-icon nzType="printer" nzTheme="outline"></i
+              >พิมพ์ใบสั่งซื้อ</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+    <div nz-col nzSpan="12" class="center">
+      <span>สถานะ</span>
+      <nz-select ngModel="lucy" style="margin-left: 10px">
+        <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
+        <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
+        <nz-option nzValue="disabled" nzLabel="Disabled" nzDisabled></nz-option>
+      </nz-select>
+      <button nz-button nzType="primary" nzDanger style="margin-left: 10px">
+        บันทึก
+      </button>
+      <button nz-button nzType="default" nzDanger>ปิด</button>
+    </div>
+  </div>
+</div>
+<div nz-row>
+  <div nz-col nzSpan="8">
+    <div>
+      <h5>ข้อมูลคำสั่งซื้อ</h5>
+      <div nz-row>
+        <div nz-col nzSpan="8">วันที่สร้าง</div>
+        <div nz-col nzSpan="16">วันที่</div>
+      </div>
+      <div nz-row>
+        <div nz-col nzSpan="8">วันที่สร้าง</div>
+        <div nz-col nzSpan="16">วันที่</div>
+      </div>
+      <div nz-row>
+        <div nz-col nzSpan="8">วันที่สร้าง</div>
+        <div nz-col nzSpan="16">วันที่</div>
+      </div>
+      <div nz-row>
+        <div nz-col nzSpan="8">วันที่สร้าง</div>
+        <div nz-col nzSpan="16">วันที่</div>
+      </div>
+      <hr />
+      <div nz-row>
+        <div nz-col nzSpan="12">
+          <h5>ข้อมูลลูกค้า</h5>
+        </div>
+        <div nz-col nzSpan="12">
+          <button nz-button nzType="default">แก้ไข</button>
+        </div>
+      </div>
+      <div>
+        <div nz-row>
+          <div nz-col nzSpan="8">วันที่สร้าง</div>
+          <div nz-col nzSpan="16">วันที่</div>
+        </div>
+        <div nz-row>
+          <div nz-col nzSpan="8">วันที่สร้าง</div>
+          <div nz-col nzSpan="16">วันที่</div>
+        </div>
+        <div nz-row>
+          <nz-tag [nzColor]="'#343a40'">ที่อยู่สำหรับจัดส่ง</nz-tag>
+        </div>
+        <div nz-row>
+          <div nz-col nzSpan="8">วันที่สร้าง</div>
+          <div nz-col nzSpan="16">วันที่</div>
+        </div>
+        <div nz-row>
+          <div nz-col nzSpan="8">วันที่สร้าง</div>
+          <div nz-col nzSpan="16">วันที่</div>
+        </div>
+        <div nz-row>
+          <div nz-col nzSpan="8">วันที่สร้าง</div>
+          <div nz-col nzSpan="16">วันที่</div>
+        </div>
+        <div nz-row>
+          <nz-tag [nzColor]="'#343a40'">ที่อยู่สำหรับจัดส่ง</nz-tag>
+        </div>
+        <div nz-row>
+          <div nz-col nzSpan="8">วันที่สร้าง</div>
+          <div nz-col nzSpan="16">วันที่</div>
+        </div>
+        <div nz-row>
+          <div nz-col nzSpan="8">วันที่สร้าง</div>
+          <div nz-col nzSpan="16">วันที่</div>
+        </div>
+        <div nz-row>
+          <div nz-col nzSpan="8">วันที่สร้าง</div>
+          <div nz-col nzSpan="16">วันที่</div>
+        </div>
+        <div nz-row>
+          <div nz-col nzSpan="8">วันที่สร้าง</div>
+          <div nz-col nzSpan="16">วันที่</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div nz-col nzSpan="16">
+    <!-- ก้อนที่1 การจัดส่ง -->
+    <div nz-row>
+      <div nz-col nzSpan="12">
+        <h5>การจัดส่ง</h5>
+      </div>
+      <div nz-col nzSpan="12">
+        <nz-select ngModel="พิมพ์ใบจัดส่ง">
+          <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
+          <nz-option
+            nzValue="พิมพ์ใบจัดส่ง"
+            nzLabel="พิมพ์ใบจัดส่ง"
+          ></nz-option>
+          <nz-option
+            nzValue="disabled"
+            nzLabel="Disabled"
+            nzDisabled
+          ></nz-option>
+        </nz-select>
+      </div>
+    </div>
+    <div nz-row>
+      <div nz-col nzSpan="8">
+        <div nz-row>
+          <span>ผู้ให้บริการขนส่ง</span>
+        </div>
+        <div nz-row>
+          <span>ขนส่ง Direct</span>
+          <span>COD</span>
+        </div>
+        <div nz-row>
+          <div nz-col nzSpan="16">
+            <span>J&T Express เก็บเงินปลายทาง </span>
+          </div>
+          <div nz-col nzSpan="8">
+            <span>50.00 บาท</span>
+          </div>
+        </div>
+      </div>
+      <div nz-col nzSpan="8">
+        <p>Tracking Code</p>
+        <span>121212121212122</span>
+      </div>
+      <div nz-col nzSpan="8">
+        <p>Shipping Code</p>
+      </div>
+    </div>
+    <!-- ก้อนที่2 รายการสั่งซื้อ -->
+    <div>
+      <h5>รายการสั่งซื้อ</h5>
+
+      <nz-table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Address</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ss</td>
+            <td>ddd</td>
+            <td>ss</td>
+          </tr>
+        </tbody>
+      </nz-table>
+    </div>
+    <!-- ก้อนที่-3 หมายเหตุ -->
+    <div nz-row>
+        <div nz-col nzSpan=12>
+            <p>หมายเหตุจากลูกค้า</p>
+            <p>-</p>
+        </div>
+        <div nz-col nzSpan=12>
+            <p>หมายเหตุภายใน</p>
+            <textarea rows="4" nz-input ></textarea>
+        </div>
+    </div>
+  </div>
+</div>

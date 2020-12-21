@@ -64,4 +64,8 @@ export class OdersComponent implements OnInit {
       console.log(this.count);
     });
   }
+
+  openwindow(ordercode: any) {
+    window.open(`/order-details/${ordercode}`, '_blank',"width=1075,height=700");
+  }
 }
