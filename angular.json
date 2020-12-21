@@ -130,5 +130,8 @@
       }
     }
   },
-  "defaultProject": "Test-tomato"
+  "defaultProject": "Test-tomato",
+  "cli": {
+    "analytics": "6361abb2-e9ab-4d10-b566-8c4c9a3f3ed9"
+  }
 }
