@@ -4,7 +4,7 @@
       <div nz-row>
         <div nz-col nzSpan="5"><p>QR Code</p></div>
         <div nz-col>
-          <span>เลขออเดอร์ #{{orderDetail?.ordercode}}</span>
+          <span>เลขออเดอร์ #{{ orderDetail?.ordercode }}</span>
           <p>
             <a nz-button nzType="link" nzDanger
               ><i nz-icon nzType="printer" nzTheme="outline"></i
@@ -34,19 +34,19 @@
       <h5>ข้อมูลคำสั่งซื้อ</h5>
       <div nz-row>
         <div nz-col nzSpan="8">วันที่สร้าง</div>
-        <div nz-col nzSpan="16">วันที่</div>
+        <div nz-col nzSpan="16">{{ orderDetail?.created_at }}</div>
       </div>
       <div nz-row>
-        <div nz-col nzSpan="8">วันที่สร้าง</div>
-        <div nz-col nzSpan="16">วันที่</div>
+        <div nz-col nzSpan="8">ช่องทางการขาย</div>
+        <div nz-col nzSpan="16">{{ orderDetail?.channel }}</div>
       </div>
       <div nz-row>
-        <div nz-col nzSpan="8">วันที่สร้าง</div>
-        <div nz-col nzSpan="16">วันที่</div>
+        <div nz-col nzSpan="8">สร้างโดย</div>
+        <div nz-col nzSpan="16">{{ orderDetail.created_by }}</div>
       </div>
       <div nz-row>
-        <div nz-col nzSpan="8">วันที่สร้าง</div>
-        <div nz-col nzSpan="16">วันที่</div>
+        <div nz-col nzSpan="8">การชำระเงิน</div>
+        <div nz-col nzSpan="16">{{ orderDetail?.paymenttype.name }}</div>
       </div>
       <hr />
       <div nz-row>
@@ -59,26 +59,28 @@
       </div>
       <div>
         <div nz-row>
-          <div nz-col nzSpan="8">วันที่สร้าง</div>
-          <div nz-col nzSpan="16">วันที่</div>
+          <div nz-col nzSpan="8">อีเมล</div>
+          <div nz-col nzSpan="16">{{ orderDetail?.created_by }}</div>
         </div>
         <div nz-row>
-          <div nz-col nzSpan="8">วันที่สร้าง</div>
-          <div nz-col nzSpan="16">วันที่</div>
+          <div nz-col nzSpan="8">เบอร์โทร</div>
+          <div nz-col nzSpan="16">{{ orderDetail?.bill_tel }}</div>
         </div>
         <div nz-row>
           <nz-tag [nzColor]="'#343a40'">ที่อยู่สำหรับจัดส่ง</nz-tag>
         </div>
         <div nz-row>
-          <div nz-col nzSpan="8">วันที่สร้าง</div>
-          <div nz-col nzSpan="16">วันที่</div>
+          <div nz-col nzSpan="8">ชื่อ - นามสกุล</div>
+          <div nz-col nzSpan="16">
+            {{ orderDetail.bill_name }} {{ orderDetail.bill_lastname }}
+          </div>
         </div>
         <div nz-row>
-          <div nz-col nzSpan="8">วันที่สร้าง</div>
-          <div nz-col nzSpan="16">วันที่</div>
+          <div nz-col nzSpan="8">เบอร์โทร</div>
+          <div nz-col nzSpan="16">{{ orderDetail?.bill_tel }}</div>
         </div>
         <div nz-row>
-          <div nz-col nzSpan="8">วันที่สร้าง</div>
+          <div nz-col nzSpan="8">ที่อยู่</div>
           <div nz-col nzSpan="16">วันที่</div>
         </div>
         <div nz-row>
@@ -174,14 +176,14 @@
     </div>
     <!-- ก้อนที่-3 หมายเหตุ -->
     <div nz-row>
-        <div nz-col nzSpan=12>
-            <p>หมายเหตุจากลูกค้า</p>
-            <p>-</p>
-        </div>
-        <div nz-col nzSpan=12>
-            <p>หมายเหตุภายใน</p>
-            <textarea rows="4" nz-input ></textarea>
-        </div>
+      <div nz-col nzSpan="12">
+        <p>หมายเหตุจากลูกค้า</p>
+        <p>-</p>
+      </div>
+      <div nz-col nzSpan="12">
+        <p>หมายเหตุภายใน</p>
+        <textarea rows="4" nz-input></textarea>
+      </div>
     </div>
   </div>
 </div>

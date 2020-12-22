@@ -1,5 +1,6 @@
+import { OrderService } from './../../../order.service';
 import { Component, OnInit } from '@angular/core';
-
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-order-details',
   templateUrl: './order-details.component.html',
@@ -7,7 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderDetailsComponent implements OnInit {
   orderDetail: any = null;
-  constructor() {}
+  status: number = 0;
+  trackcode: string = '';
+  selectdelivery: any = null;
+  Note: string = '';
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private orderService: OrderService
+  ) {}
 
-  ngOnInit(): void {}
+  async ngOnInit() {
+    let ordercode = this.activatedRoute.snapshot.paramMap.get('ordercode');
+    console.log('ordercode', ordercode);
+    try {
+      let res = await this.orderService.getOrderByCode(ordercode || '{}');
+
+      console.log('order', res);
+      this.orderDetail = res;
+      this.status = this.orderDetail.status;
+      this.Note = this.orderDetail.note;
+    } catch (err) {}
+  }
 }
